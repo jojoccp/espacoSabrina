@@ -24,7 +24,10 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	runtimeOnly("org.postgresql:postgresql")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
-	implementation group: 'org.apache.kafka', name: 'kafka_2.10', version: '0.8.0'
+
+//	cors
+	testImplementation( "org.apache.httpcomponents:httpclient")
+
 }
 
 tasks.withType<KotlinCompile> {
