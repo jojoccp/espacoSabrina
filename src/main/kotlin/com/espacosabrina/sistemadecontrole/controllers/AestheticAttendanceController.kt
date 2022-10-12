@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.*
+import java.util.*
 
 @Controller
 @RequestMapping("/attendance")
@@ -25,6 +26,19 @@ class AestheticAttendanceController {
         return ResponseEntity.status(HttpStatus.OK).body(attendanceService.findAll())
     }
 
+    @CrossOrigin
+    @GetMapping("/byClientName/{clientName}")
+    fun getAttendancesPerClient(@PathVariable clientName: String): ResponseEntity<MutableList<AestheticAttendanceModel>> {
+        return ResponseEntity.status(HttpStatus.OK).body(attendanceService.findByClientName(clientName))
+    }
+
+    @CrossOrigin
+    @GetMapping("/byAttendanceDate/{attendanceDate}")
+    fun getAttendancesPerDate(@PathVariable attendanceDate: String): ResponseEntity<MutableList<AestheticAttendanceModel>> {
+        return ResponseEntity.status(HttpStatus.OK).body(attendanceService.findByAttendanceDate(attendanceDate))
+    }
+
+    @CrossOrigin
     @PostMapping
     fun createAttendance(@RequestBody attendanceDTO: AestheticAttendanceDTO): ResponseEntity<String> {
         attendanceService.save(attendanceDTO)

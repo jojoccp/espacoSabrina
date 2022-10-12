@@ -52,7 +52,8 @@ import javax.persistence.Column
         procedure = procedure,
         value = value,
         attendanceDate = attendanceDate,
-        clientName = clientName
+        clientName = clientName,
+        paymentType = paymentType
     )
 
     fun AestheticAttendanceModel.attendanceModeltoDTO() = AestheticAttendanceDTO(
@@ -60,5 +61,6 @@ import javax.persistence.Column
         procedure = procedure,
         value = value,
         attendanceDate = attendanceDate,
-        clientName = clientName
+        clientName = clientName,
+        paymentType = paymentType
     )

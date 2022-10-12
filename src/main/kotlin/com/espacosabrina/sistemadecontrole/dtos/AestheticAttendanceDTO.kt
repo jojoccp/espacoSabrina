@@ -1,5 +1,6 @@
 package com.espacosabrina.sistemadecontrole.dtos
 
+import com.espacosabrina.sistemadecontrole.utils.PaymentType
 import com.espacosabrina.sistemadecontrole.utils.Procedure
 import com.fasterxml.jackson.databind.PropertyNamingStrategy
 import com.fasterxml.jackson.databind.annotation.JsonNaming
@@ -14,6 +15,7 @@ data class AestheticAttendanceDTO (
     var idAttendance: Int,
     var procedure: Procedure, /*Procedure*/
     var value: Double,
-    var attendanceDate: Date, /*Date*/
-    var clientName: String
+    var attendanceDate: String, /*Date*/
+    var clientName: String,
+    var paymentType: PaymentType
         )

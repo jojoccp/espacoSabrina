@@ -1,5 +1,6 @@
 package com.espacosabrina.sistemadecontrole.models
 
+import com.espacosabrina.sistemadecontrole.utils.PaymentType
 import com.espacosabrina.sistemadecontrole.utils.Procedure
 import java.util.Date
 import javax.persistence.*
@@ -16,7 +17,9 @@ data class AestheticAttendanceModel (
     @Column
     var value: Double,
     @Column
-    var attendanceDate: Date,
+    var attendanceDate: String,
     @Column
-    var clientName: String
+    var clientName: String,
+    @Column
+    var paymentType: PaymentType
         )

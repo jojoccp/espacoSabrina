@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./attendanceRegistration.css">
+
+    <script src="attendanceRegistration.js"></script>
+    <title>Registro de Procedimentos</title>
+</head>
+
+<body>
+    <header>
+        <img src="../imgs/lotus.png" id="lotus">
+        <h1 id="title">Espaço Sabrina</h1>
+    </header>
+    <div class="container-sm">
+        <h2>Registro de Procedimentos</h2>
+        <hr>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Nome da Cliente:</span>
+            <input type="text" class="form-control" id="client_name">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Data do Procedimento:</span>
+            <input type="date" class="form-control" id="attendance_date">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Tipo do Procedimento:</span>
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="procedure">
+                <option value="BUCO">Buço</option>
+                <option value="PERNA">Perna</option>
+                <option value="MEIA_PERNA">1/2 Perna</option>
+                <option value="INTIMA">Íntima</option>
+                <option value="DEPILACAO_COMPLETA">Depilação Completa</option>
+                <option value="TATUAGEM">Tatuagem</option>
+                <option value="LIMPEZA_DE_PELE">Limpeza de Pele</option>
+                <option value="MASSAGEM_MODELADORA_4S">Massagem Modeladora 4S</option>
+                <option value="MASSAGEM_MODELADORA_8S">Massagem Modeladora 8S</option>
+                <option value="DRENAGEM_LINFATICA_4S">Drenagem Linfática 4S</option>
+                <option value="SEX_SHOP">Sex Shop</option>
+            </select>
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Tipo de Pagamento:</span>
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="payment_type">
+                <option value="PIX">Pix</option>
+                <option value="DINHEIRO">Dinheiro</option>
+                <option value="DEBITO">Débito</option>
+                <option value="CREDITO">Crédito</option>
+            </select>
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Valor:</span>
+            <input type="text" class="form-control" id="value">
+        </div>
+
+        <div class="col-12">
+            <button class="btn btn-primary" type="submit" onclick="sendData()">Enviar</button>
+        </div>
+    </div>
+    <footer>
+        <h6>Copyright ©2022 Todos os direitos reservados</h6>
+    </footer>
+</body>
+
+</html>
