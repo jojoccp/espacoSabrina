@@ -23,12 +23,18 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	runtimeOnly("org.postgresql:postgresql")
+//  wiremock
 	testImplementation("com.github.tomakehurst:wiremock-jre8:2.35.0")
 //	testImplementation("com.h2database:h2:1.3.148")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 
 //	cors
 	testImplementation( "org.apache.httpcomponents:httpclient")
+
+// flyway
+	implementation("org.flywaydb:flyway-core:7.7.0")
+
+
 
 }
 

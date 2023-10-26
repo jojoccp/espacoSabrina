@@ -18,6 +18,9 @@ interface AestheticAttendanceRepository: JpaRepository<AestheticAttendanceModel,
     @Query(value = "SELECT * FROM tb_attendance WHERE attendance_date = ?1", nativeQuery = true)
     fun findByAttendanceDate(attendanceDate: String): MutableList<AestheticAttendanceModel>
 
+    @Query(value = "SELECT * FROM tb_attendance WHERE id_attendance = ?1", nativeQuery = true)
+    fun findByAttendanceId(attendanceId: Int): MutableList<AestheticAttendanceModel>
+
     fun save(attendanceModel:  AestheticAttendanceModel): AestheticAttendanceModel
 
     override fun delete(attendanceModel: AestheticAttendanceModel)

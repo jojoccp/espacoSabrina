@@ -28,11 +28,16 @@ class AestheticAttendanceService(private val repository: AestheticAttendanceRepo
     }
 
     fun findByClientName(clientName: String): MutableList<AestheticAttendanceModel> {
+        println("Entrei aqui eim porra 2")
         return repository.findByClientName(clientName)
     }
 
     fun findByAttendanceDate(attendanceDate: String): MutableList<AestheticAttendanceModel> {
         return repository.findByAttendanceDate(attendanceDate)
+    }
+
+    fun findAttendanceById(attendanceId: Int): MutableList<AestheticAttendanceModel> {
+        return repository.findByAttendanceId(attendanceId)
     }
 
 //    fun findTests(): String{

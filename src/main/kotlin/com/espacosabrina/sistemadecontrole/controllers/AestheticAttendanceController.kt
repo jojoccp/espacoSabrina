@@ -23,13 +23,13 @@ class AestheticAttendanceController {
     @CrossOrigin
     @GetMapping
     fun getAllAttendances(): ResponseEntity<MutableList<AestheticAttendanceModel>> {
-        println("####teeeestando")
         return ResponseEntity.status(HttpStatus.OK).body(attendanceService.findAll())
     }
 
     @CrossOrigin
     @GetMapping("/byClientName/{clientName}")
     fun getAttendancesPerClient(@PathVariable clientName: String): ResponseEntity<MutableList<AestheticAttendanceModel>> {
+        println("Entrei aqui eim porra")
         return ResponseEntity.status(HttpStatus.OK).body(attendanceService.findByClientName(clientName))
     }
 
@@ -40,14 +40,15 @@ class AestheticAttendanceController {
     }
 
     @CrossOrigin
-    @GetMapping("/testget")
-    fun testGet(): ResponseEntity<MutableList<AestheticAttendanceModel>> {
-        return ResponseEntity.status(HttpStatus.OK).body(attendanceService.findAll())
+    @GetMapping("/byAttendanceId/{attendanceId}")
+    fun getAttendanceById(@PathVariable attendanceId: Int): ResponseEntity<MutableList<AestheticAttendanceModel>> {
+        return ResponseEntity.status(HttpStatus.OK).body(attendanceService.findAttendanceById(attendanceId))
     }
 
     @CrossOrigin
     @PostMapping
     fun createAttendance(@RequestBody attendanceDTO: AestheticAttendanceDTO): ResponseEntity<String> {
+        print("entrou aqui porra")
         attendanceService.save(attendanceDTO)
         return ResponseEntity.status(HttpStatus.OK).body("Procedimento registrado com sucesso")
     }
