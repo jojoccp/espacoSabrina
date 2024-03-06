@@ -14,53 +14,53 @@ import javax.persistence.Column
 
 
     fun ClientDTO.clientDTOToModel() = ClientModel(
-        idClient = idClient,
+        clientId = clientId,
         clientName = clientName,
         clientCellphone = clientCellphone
     )
 
     fun ClientModel.clientModeltoDTO() = ClientDTO(
-        idClient = idClient,
+        clientId = clientId,
         clientName = clientName,
         clientCellphone = clientCellphone
     )
 
     fun OrderDTO.orderDTOToModel() = OrderModel(
-        idOrder = idOrder,
-        typeOfService = typeOfService,
+        orderId = orderId,
+        orderTypeOfService = orderTypeOfService,
         orderValue = orderValue,
-        idClient = idClient,
         orderDate = orderDate,
         orderPayment = orderPayment,
-        paymentParcels = paymentParcels,
-        numberParcels = numberParcels
+        orderPaymentParcels = orderPaymentParcels,
+        orderNumberParcels = orderNumberParcels,
+        clientId = clientId,
+        attendanceId = attendanceId
     )
 
     fun OrderModel.orderModelToDTO() = OrderDTO(
-        idOrder = idOrder,
-        typeOfService = typeOfService,
+        orderId = orderId,
+        orderTypeOfService = orderTypeOfService,
         orderValue = orderValue,
-        idClient = idClient,
         orderDate = orderDate,
         orderPayment = orderPayment,
-        paymentParcels = paymentParcels,
-        numberParcels = numberParcels
+        orderPaymentParcels = orderPaymentParcels,
+        orderNumberParcels = orderNumberParcels,
+        clientId = clientId,
+        attendanceId = attendanceId
     )
 
     fun AestheticAttendanceDTO.attendanceDTOToModel() = AestheticAttendanceModel(
-        idAttendance = idAttendance,
-        procedure = procedure,
-        value = value,
+        attendanceId = attendanceId,
+        attendanceProcedure = attendanceProcedure,
         attendanceDate = attendanceDate,
-        clientName = clientName,
-        paymentType = paymentType
+        attendancePaymentType = attendancePaymentType,
+        clientId = clientId
     )
 
     fun AestheticAttendanceModel.attendanceModeltoDTO() = AestheticAttendanceDTO(
-        idAttendance = idAttendance,
-        procedure = procedure,
-        value = value,
+        attendanceId = attendanceId,
+        attendanceProcedure = attendanceProcedure,
         attendanceDate = attendanceDate,
-        clientName = clientName,
-        paymentType = paymentType
+        attendancePaymentType = attendancePaymentType,
+        clientId = clientId
     )

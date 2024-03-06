@@ -1,0 +1,16 @@
+{
+  "mappings": [
+    {
+      "request": {
+        "method": "GET",
+        "urlPattern": "/bad-request"
+      },
+      "response": {
+        "status": 400,
+        "jsonBody": {
+          "deuruim": "deu ruim cara"
+        }
+      }
+    }
+  ]
+}

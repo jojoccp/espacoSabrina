@@ -10,7 +10,7 @@ import java.util.*
 @Repository
 interface ClientRepository: JpaRepository<ClientModel, Int> {
 
-     override fun findById(id: Int): Optional<ClientModel>
+     fun findByClientId(id: String): Optional<ClientModel>
 
      override fun findAll(): MutableList<ClientModel>
 

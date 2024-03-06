@@ -2,24 +2,24 @@ package com.espacosabrina.sistemadecontrole.models
 
 import com.espacosabrina.sistemadecontrole.utils.PaymentType
 import com.espacosabrina.sistemadecontrole.utils.Procedure
+import org.hibernate.annotations.GenericGenerator
+import java.time.LocalDate
 import java.util.Date
+import java.util.UUID
 import javax.persistence.*
 
 @Entity
-@Table(name = "TB_ATTENDANCE")
+@Table(name = "ATTENDANCE")
 data class AestheticAttendanceModel (
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    var idAttendance: Int,
-    @Column
-    var procedure: Procedure,
-    @Column
-    var value: Double,
+    var attendanceId: String,
     @Column
     var attendanceDate: String,
     @Column
-    var clientName: String,
+    var attendancePaymentType: PaymentType,
     @Column
-    var paymentType: PaymentType
+    var attendanceProcedure: Procedure,
+    @Column
+    var clientId: String
         )

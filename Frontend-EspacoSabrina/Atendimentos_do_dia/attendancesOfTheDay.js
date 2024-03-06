@@ -33,6 +33,8 @@ function callRightFunction() {
     console.log(client_name)
     console.log(attendance_date)
 
+    
+
     if(client_name != "") {
         showAttendancesPerClient()
     } else if(attendance_date != "") {
@@ -70,6 +72,12 @@ async function showAttendancesPerClient() {
 
 async function showAttendancesPerDate() {
     let attendance_date = document.getElementById("attendance_date").value
+    
+
+    let splited = attendance_date.split("-")
+
+    attendance_date = `${splited[2]}-${splited[1]}-${splited[0]}`
+
     console.log(attendance_date)
 
     const response = await fetch(`http://localhost:8080/attendance/byAttendanceDate/${attendance_date}`);

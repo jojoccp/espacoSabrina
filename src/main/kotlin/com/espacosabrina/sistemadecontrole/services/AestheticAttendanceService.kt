@@ -1,20 +1,14 @@
 package com.espacosabrina.sistemadecontrole.services
 
 import com.espacosabrina.sistemadecontrole.dtos.AestheticAttendanceDTO
-import com.espacosabrina.sistemadecontrole.dtos.ClientDTO
 import com.espacosabrina.sistemadecontrole.extensionFunctions.attendanceDTOToModel
-import com.espacosabrina.sistemadecontrole.extensionFunctions.clientDTOToModel
-import com.espacosabrina.sistemadecontrole.extensionFunctions.clientModeltoDTO
 import com.espacosabrina.sistemadecontrole.models.AestheticAttendanceModel
-import com.espacosabrina.sistemadecontrole.models.ClientModel
 import com.espacosabrina.sistemadecontrole.repositories.AestheticAttendanceRepository
-import com.espacosabrina.sistemadecontrole.repositories.ClientRepository
+import org.slf4j.Logger
 import org.springframework.stereotype.Service
-import java.util.Date
-import java.util.Optional
 
 @Service
-class AestheticAttendanceService(private val repository: AestheticAttendanceRepository) {
+class AestheticAttendanceService(private val repository: AestheticAttendanceRepository, val logger: Logger) {
 
     fun findAll(): MutableList<AestheticAttendanceModel> {
         return repository.findAll()
@@ -28,7 +22,6 @@ class AestheticAttendanceService(private val repository: AestheticAttendanceRepo
     }
 
     fun findByClientName(clientName: String): MutableList<AestheticAttendanceModel> {
-        println("Entrei aqui eim porra 2")
         return repository.findByClientName(clientName)
     }
 
@@ -36,11 +29,13 @@ class AestheticAttendanceService(private val repository: AestheticAttendanceRepo
         return repository.findByAttendanceDate(attendanceDate)
     }
 
-    fun findAttendanceById(attendanceId: Int): MutableList<AestheticAttendanceModel> {
+    fun findAttendanceById(attendanceId: String): AestheticAttendanceModel {
         return repository.findByAttendanceId(attendanceId)
     }
 
-//    fun findTests(): String{
-//        return
-//    }
+    fun delete(attendanceDTO: AestheticAttendanceDTO) {
+        var attendanceModel = attendanceDTO.attendanceDTOToModel()
+        repository.delete(attendanceModel)
+        logger.info("AestheticAttendance - attendance with id: ${attendanceDTO.attendanceId} was deleted.")
+    }
 }

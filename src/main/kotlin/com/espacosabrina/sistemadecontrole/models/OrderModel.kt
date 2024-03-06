@@ -1,30 +1,36 @@
 package com.espacosabrina.sistemadecontrole.models
 
+import com.espacosabrina.sistemadecontrole.utils.Procedure
 import com.espacosabrina.sistemadecontrole.utils.TypeOfService
 import java.time.LocalDateTime
 import java.util.*
 import javax.persistence.*
 
 @Entity
-@Table(name = "TB_ORDER")
+@Table(name = "ORDER_PAYMENT")
 class OrderModel (
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    var idOrder: Int,
+    var orderId: String,
     @Column
-    var typeOfService: TypeOfService,
+    var orderTypeOfService: TypeOfService,
     @Column
     var orderValue: Long,
     @Column
-    var idClient: Int,
-    @Column
-    var orderDate: LocalDateTime,
+    var orderDate: String,
     @Column
     var orderPayment: Long,
     @Column
-    var paymentParcels: Long,
+    var orderPaymentParcels: Long,
     @Column
-    var numberParcels: Int
+    var orderNumberParcels: Int,
+    @Column
+    var clientId: String,
+    @Column
+    var attendanceId: String
+
+
+
+
 
     )

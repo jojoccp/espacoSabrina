@@ -1,14 +1,16 @@
 package com.espacosabrina.sistemadecontrole.models
 
+import org.hibernate.annotations.GenericGenerator
+import java.util.UUID
 import javax.persistence.*
 
+
 @Entity
-@Table(name = "TB_CLIENT")
+@Table(name = "CLIENT")
 class ClientModel (
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    var idClient: Int,
+    var clientId: String,
     @Column
     var clientName: String,
     @Column

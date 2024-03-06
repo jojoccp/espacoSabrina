@@ -31,8 +31,15 @@ dependencies {
 //	cors
 	testImplementation( "org.apache.httpcomponents:httpclient")
 
+	// https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager
+	implementation("org.hibernate:hibernate-entitymanager:5.6.15.Final")
+
+	// https://mvnrepository.com/artifact/org.hibernate/hibernate-core
+	implementation("org.hibernate:hibernate-core:5.6.15.Final")
+
+
 // flyway
-	implementation("org.flywaydb:flyway-core:7.7.0")
+//	implementation("org.flywaydb:flyway-core:7.7.0")
 
 
 

@@ -12,10 +12,9 @@ import javax.persistence.Id
 
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class)
 data class AestheticAttendanceDTO (
-    var idAttendance: Int,
-    var procedure: Procedure, /*Procedure*/
-    var value: Double,
+    var attendanceId: String = "ATT_" + UUID.randomUUID().toString().uppercase(),
     var attendanceDate: String, /*Date*/
-    var clientName: String,
-    var paymentType: PaymentType
+    var attendancePaymentType: PaymentType,
+    var attendanceProcedure: Procedure, /*Procedure*/
+    var clientId: String
         )

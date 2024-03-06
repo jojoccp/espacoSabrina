@@ -2,7 +2,8 @@
 
 This is a simple system to control the flux of the payments of made in SpringBoot and Kotlin
 
-
+## ANNOTATIONS
+-all endpoints of Orders, Attendance and Clients are okay
 ## V.1
 - implemented classes AesttheticAttendance, Client and Order
 - configure and create database and tables

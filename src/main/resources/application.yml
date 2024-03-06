@@ -1,6 +1,34 @@
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/espaco_sabrina
+    username: postgres
+    password: Leonardo16@
+  jpa:
+    hibernate:
+#      dialect: org.hibernate.dialect.PostgreSQLDialect
+#      format_sql: true
+#      show_sql: true
+      ddl-auto: update
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+
+#  <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+#  <property name="hibernate.hbm2ddl.auto" value="update" />
+#  <property name="hibernate.show_sql" value="true" />
+#  <property name="hibernate.format_sql" value="true" />
+
+
 server:
   port: 8080
 
-controller:
-  teste:
-    endpoint: http://localhost:8082/porra
+
+#spring.datasource.url= jdbc:postgresql://localhost:5432/espaco_sabrina
+#spring.datasource.username=postgres
+#spring.datasource.password=Leonardo16@
+#spring.jpa.hibernate.ddl-auto=update
+#spring.liquibase.change-log=classpath:db/changelog/database-changelog.xml
+
+#spring.jackson.property-naming-strategy=SNAKE_CASE
+
+

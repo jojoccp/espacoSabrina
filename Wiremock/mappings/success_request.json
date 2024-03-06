@@ -3,12 +3,12 @@
         {
             "request": {
                 "method": "GET",
-                "urlPattern": "/porra"
+                "urlPattern": "/success-request"
             },
             "response": {
                 "status": 200,
                 "jsonBody": {
-                    "deubom": "deu bom cara"
+                    "deubom": "aceeerrrtooou"
                 }
             }
         }

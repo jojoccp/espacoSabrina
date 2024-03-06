@@ -1,5 +1,5 @@
 package com.espacosabrina.sistemadecontrole.utils
 
 enum class TypeOfService {
-    DEPILACAO,ROMMANEL, SEXSHOP
+    ESTETICA, DEPILACAO, ROMMANEL, SEXSHOP
 }
